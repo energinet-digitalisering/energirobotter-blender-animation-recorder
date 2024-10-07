@@ -33,7 +33,7 @@ class AnimationRecorder:
         rest = pose_bone.bone.matrix_local.copy()
         rest_inv = rest.inverted()
 
-        if pose_bone.parent.name != "Root":
+        if pose_bone.parent != None:
             par_mat = pose_bone.parent.matrix.copy()
             par_inv = par_mat.inverted()
             par_rest = pose_bone.parent.bone.matrix_local.copy()
@@ -67,9 +67,6 @@ class AnimationRecorder:
 
     def angles_of_bones(self):
         for bone in bpy.context.active_object.pose.bones:
-
-            if bone.name == "Root":
-                continue
 
             angle = self.angle_of_bone(bone)
             print(bone.name + ": " + str(angle))
