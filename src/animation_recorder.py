@@ -88,6 +88,7 @@ class AnimationRecorder:
                 print(bpy.data.scenes["Scene"].frame_current)
                 self.angles_of_bones()
 
+                # Break loop at end of animation
                 if (
                     bpy.data.scenes["Scene"].frame_current
                     >= bpy.data.scenes["Scene"].frame_end
