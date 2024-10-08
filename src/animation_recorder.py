@@ -56,7 +56,7 @@ class AnimationRecorder:
 
         return smat
 
-    def get_bones_rotation(self, pose_bone, axis):
+    def get_bone_rotation(self, pose_bone, axis):
 
         mat = self.get_pose_matrix_in_other_space(pose_bone.matrix, pose_bone)
 
@@ -71,8 +71,10 @@ class AnimationRecorder:
 
         # Get unconstrained axis
         axis_rot = (np.array(bone.lock_rotation) == False).nonzero()[0][0]
+        angle = np.rad2deg(self.get_bone_rotation(bone, axis_rot))
+        angle = round(angle, 2)
 
-        return np.rad2deg(self.get_bones_rotation(bone, axis_rot))
+        return angle
 
     def angles_of_bones(self):
 
