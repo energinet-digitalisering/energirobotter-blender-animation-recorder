@@ -4,9 +4,10 @@ Blender addon for recording local angles of armature during each animation frame
 
 The name of the addon is simplified to `AnimationRecorder`.
 
-There are two ways to install/use this addon. Installing like a normal Blender addon, or in a development environment with VSCode. 
 
 ## Setup
+
+There are two ways to install/use this addon: installing like a normal Blender addon, or in a development environment with VSCode. Only use one or the other.
 
 ### Installing Blender Addon
 In Blender, navigate to `Edit > Preferences... > Add-Ons`.
@@ -27,13 +28,13 @@ Tested with:
 
 #### Dependencies
 
-It is recommended to install Python dependencies in a virtual environment, like pipenv or Anaconda. Install dependencies with (examples with Miniconda):
+It is recommended to install Python dependencies in a virtual environment, like pipenv or Anaconda (examples with Miniconda). Install dependencies with:
 ```
-conda create -n energirobotter_blender_animation_recorder python=3.11
+conda create -n energirobotter_blender_animation_recorder python=3.11.7
 pip3 install -r requirements.txt
 ```
 
-In VSCode download the extension `Blender Development` by Jaques Lucke. 
+In VSCode, download the extension `Blender Development` by Jaques Lucke. 
 
 #### Blender Deployment
 
@@ -51,7 +52,7 @@ Start Blender  from VSCode with `Ctrl + Shift + P` and search for `Blender: Star
 
 From here you can use `Ctrl + Shift + P` and choose `Blender: Reload Addons` to update Addons in Blender.
 
-> NOTE: The `__init__.py` file is the addon entry point from Blender, so all Blender classes should be registered here. This is only an affect of the VSCode Blender extension.
+> NOTE: The `__init__.py` file is the addon entry point from Blender, so all Blender classes should be registered here. This is only an effect of the VSCode Blender extension.
 
 
 ## Usage
