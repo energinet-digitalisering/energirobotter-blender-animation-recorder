@@ -4,8 +4,28 @@ Blender addon for recording local angles of armature during each animation frame
 
 The name of the addon is simplified to `AnimationRecorder`.
 
+There are two ways to install/use this addon. Installing like a normal Blender addon, or in a development environment with VSCode. 
 
-## Development Setup With VSCode
+## Setup
+
+### Installing Blender Addon
+In Blender, navigate to `Edit > Preferences... > Add-Ons`.
+
+Press `Install`.
+
+Navigate to the addon .zip file, click `Install Add-on`.
+
+### Development Setup With VSCode
+
+#### Requirements
+Tested with:
+
+- Ubuntu 22.04
+- Blender 4.2.1
+- Python 3.11.7 (Blender intepreter verision)
+- VSCode
+
+#### Dependencies
 
 It is recommended to install Python dependencies in a virtual environment, like pipenv or Anaconda. Install dependencies with (examples with Miniconda):
 ```
@@ -15,7 +35,7 @@ pip3 install -r requirements.txt
 
 In VSCode download the extension `Blender Development` by Jaques Lucke. 
 
-### Blender Deployment
+#### Blender Deployment
 
 > If addon is already installed normally in Blender through `.zip` file, disable it first.
 
@@ -32,3 +52,14 @@ Start Blender  from VSCode with `Ctrl + Shift + P` and search for `Blender: Star
 From here you can use `Ctrl + Shift + P` and choose `Blender: Reload Addons` to update Addons in Blender.
 
 > NOTE: The `__init__.py` file is the addon entry point from Blender, so all Blender classes should be registered here. This is only an affect of the VSCode Blender extension.
+
+
+## Usage
+
+1. Create animation with a rig, name all bones in the rig appropriate names. These are the names used for logging. 
+
+2. Find the AnimationRecorder tab in the N Panel (if not visible press N).
+
+3. Press `Record animation`. This will quickly go through each frame until the end frame, recording all bone's local angles to a CSV file.
+
+4. The CSV file is saved next to you Blender project, and will be overwritten if not moved/renamed before next recording.  
