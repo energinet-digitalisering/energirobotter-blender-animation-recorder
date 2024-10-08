@@ -17,6 +17,7 @@ bl_info = {
     "category": "Animation",
 }
 
+############################### Packages ###############################
 
 # Non standard Python packages - "python import name": "pip install name"
 packages = {}
@@ -60,19 +61,25 @@ for package_py, package_pip in packages.items():
 print("All packages installed")
 
 
+############################### Defines ###############################
+
 # Load addon modules
 from .animation_recorder import AnimationRecorder, State
 
 # Global objects
 recorder = AnimationRecorder()
 
-# Classes
+
+############################### Scene Properties ###############################
 
 
 class SceneProperties(bpy.types.PropertyGroup):
     # Defining custom properties to be used by the addon panel
 
     ...
+
+
+############################### Operators ###############################
 
 
 class ANIMATIONRECORDER_OT_RecordAnimation(bpy.types.Operator):
@@ -108,6 +115,9 @@ class ANIMATIONRECORDER_OT_RecordAnimation(bpy.types.Operator):
         return {"RUNNING_MODAL"}
 
 
+############################### Panels ###############################
+
+
 class ANIMATIONRECORDER_PT_Panel(bpy.types.Panel):
     # Addon panel displaying options
 
@@ -125,6 +135,9 @@ class ANIMATIONRECORDER_PT_Panel(bpy.types.Panel):
             text="Record animation",
             icon="PLAY",
         )
+
+
+############################### Blender Registration ###############################
 
 
 classes = (
