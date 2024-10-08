@@ -75,10 +75,13 @@ class AnimationRecorder:
         return np.rad2deg(self.get_bones_rotation(bone, axis_rot))
 
     def angles_of_bones(self):
-        for bone in bpy.context.active_object.pose.bones:
 
-            angle = self.angle_of_bone(bone)
-            print(bone.name + ": " + str(angle))
+        data = []
+
+        for bone in bpy.context.active_object.pose.bones:
+            data.append(self.angle_of_bone(bone))
+
+        return data
 
     def record_animation(self, report_blender):
 
