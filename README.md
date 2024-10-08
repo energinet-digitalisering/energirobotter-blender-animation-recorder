@@ -20,7 +20,7 @@ In VSCode download the extension `Blender Development` by Jaques Lucke.
 Activate environment from terminal and open VSCode:
 ```
 conda activate energirobotter_blender_animation_recorder
-code ./src
+code src/
 ```
 > NOTE: You must open VSCode in the same directory as the `__init__.py` file, otherwise the extension won't see the addon. Here this is `/src`.
 
