@@ -69,6 +69,8 @@ from .animation_recorder import AnimationRecorder, State
 # Global objects
 recorder = AnimationRecorder()
 
+# Global constants
+CSV_FILE_PATH = "//recording.csv"
 
 ############################### Scene Properties ###############################
 
@@ -110,7 +112,8 @@ class ANIMATIONRECORDER_OT_RecordAnimation(bpy.types.Operator):
     def invoke(self, context, event):
         context.window_manager.modal_handler_add(self)
 
-        recorder.record_animation(self.report)
+        csv_file_path = bpy.path.abspath(CSV_FILE_PATH)
+        recorder.record_animation(csv_file_path, self.report)
 
         return {"RUNNING_MODAL"}
 

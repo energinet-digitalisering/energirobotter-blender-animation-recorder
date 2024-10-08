@@ -4,6 +4,8 @@ import numpy as np
 
 import bpy
 
+from .csv_recorder import CSVRecorder
+
 
 class State(Enum):
     IDLE = 0
@@ -85,10 +87,13 @@ class AnimationRecorder:
 
         return data
 
-    def record_animation(self, report_blender):
+    def record_animation(self, file_path, report_blender):
 
         if not self.state == State.RECORDING:
             self.state = State.RECORDING
+
+            # Create CSV file and header
+            csv_recorder = CSVRecorder(file_path, header=self.get_bone_names())
 
             bpy.data.scenes["Scene"].frame_set(0)
 
@@ -99,8 +104,9 @@ class AnimationRecorder:
                 )
 
                 # Record data
-                print(bpy.data.scenes["Scene"].frame_current)
-                self.angles_of_bones()
+                csv_recorder.log_to_csv(
+                    bpy.data.scenes["Scene"].frame_current, self.angles_of_bones()
+                )
 
                 # Break loop at end of animation
                 if (
