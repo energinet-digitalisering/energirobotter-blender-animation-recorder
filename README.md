@@ -1,6 +1,8 @@
 # Energirobotter Blender Animation Recorder
 
-Blender addon for recording local angles of armature during each animation frame to CSV file.
+Blender addon for recording local angles of armature during each animation frame to CSV file. 
+
+The name of the addon is simplified to `AnimationRecorder`.
 
 
 ## Development Setup With VSCode
@@ -22,7 +24,7 @@ Activate environment from terminal and open VSCode:
 conda activate energirobotter_blender_animation_recorder
 code src/
 ```
-> NOTE: You must open VSCode in the same directory as the `__init__.py` file, otherwise the extension won't see the addon. Here this is `/src`.
+> NOTE: You must open VSCode in the same directory as the `__init__.py` file, otherwise the extension won't see the addon. Here this is `src/`.
 
 Start Blender  from VSCode with `Ctrl + Shift + P` and search for `Blender: Start`. Use the location of your Blender install. 
 > If there is an error, check out [this video](https://youtu.be/YUytEtaVrrc?t=469) for how to fix it.

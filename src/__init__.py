@@ -8,12 +8,12 @@ from bpy.utils import register_class, unregister_class
 
 # Addon metadata
 bl_info = {
-    "name": "EnergirobotterBlenderAnimationRecorder",
+    "name": "AnimationRecorder",
     "author": "Energinet",
     "version": (0, 0, 0),
     "blender": (4, 2, 1),
-    "location": "Toolbar > EnergirobotterBlenderAnimationRecorder",
-    "description": "Record angles of animation at each frame to CSV file.",
+    "location": "Toolbar > AnimationRecorder",
+    "description": "Record angles of animation at each frame to CSV file for the Energirobotter project.",
     "category": "Animation",
 }
 
