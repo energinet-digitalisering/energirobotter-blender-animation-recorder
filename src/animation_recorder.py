@@ -22,6 +22,15 @@ class AnimationRecorder:
     def set_state_idle(self):
         self.state = State.IDLE
 
+    def get_bone_names(self):
+
+        names = []
+
+        for bone in bpy.context.active_object.pose.bones:
+            names.append(bone.name)
+
+        return names
+
     # Helper functions from rigify plugin
     def get_pose_matrix_in_other_space(self, mat, pose_bone):
         """Returns the transform matrix relative to pose_bone's current
