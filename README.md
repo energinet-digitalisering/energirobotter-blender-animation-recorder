@@ -57,10 +57,14 @@ From here you can use `Ctrl + Shift + P` and choose `Blender: Reload Addons` to 
 
 ## Usage
 
-1. Create animation with a rig, name all bones in the rig appropriate names. These are the names used for logging. 
+1. Create animation with a rig, name all bones in the rig appropriate joint names. These are the names used for logging. 
 
-2. Find the AnimationRecorder tab in the N Panel (if not visible press N).
+2. For each joint, constrain the rotation axies that the joint cannot rotate around (If not already done, set the `Mode` to `XYZ Euler`)
 
-3. Press `Record animation`. This will quickly go through each frame until the end frame, recording all bone's local angles to a CSV file.
+3. Ensure all positive bone rotations correspond to the correct positive joint rotation. If they don't, unparent the object parented to the bone and go into Edit mode and change the roll of a bone. No need to unparent any child bones. 
 
-4. The CSV file is saved next to you Blender project, and will be overwritten if not moved/renamed before next recording.  
+4. Find the AnimationRecorder tab in the N Panel (if not visible press N).
+
+5. Press `Record animation`. This will quickly go through each frame until the end frame, recording all bone's local angles to a CSV file.
+
+6. The CSV file is saved next to you Blender project, and will be overwritten if not moved/renamed before next recording.  
